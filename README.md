@@ -1,7 +1,7 @@
 # ABOUT THESE DEMOS
 
 This is a set of directories designed to teach you how to use makefiles.
-The way to use it is to start with the makefile in directory demo1, and
+The way to use it is to start with the makefile in directory `demo1`, and
 proceed in order through the directories. If you skip one, you will most
 likely not understand the rest, because each builds on the lessons from
 the preceding directories.
@@ -27,7 +27,10 @@ These lessons do not discuss how to name makefiles. I will briefly go over
 that here. Makefiles are traditionally named either "`makefile`" or "`Makefile`".
 The `make` command will look for a file with either name in the current working
 directory. The GNU version of `make` tries the following names, in order: 
-       `GNUmakefile`, `makefile` and `Makefile`.  
+
+       GNUmakefile
+       makefile
+       Makefile  
 You should not name your makefile `GNUmakefile`; it is misleading and not portable.
 I prefer the uppercase version, i.e., `Makefile`, since all of my source 
 files are always lowercase names and the other informational files, 
@@ -35,7 +38,7 @@ such as this `README`, are uppercase.
 On some systems,  the `ls` command will display uppercase before lowercase by default, so the 
 makefile name will be near the beginning of the directory listing. Use
 
-    `ls -v`
+    ls -v
 
 if your version does not do this.
 
@@ -44,13 +47,13 @@ To run the make command, make sure your working directory has a makefile
 in it. If it is not one of the standard names described above you can use the 
 `-f` option to the make command. If the makefile is named `MAKEFILE`, you would type
 
-    `make -f MAKEFILE`
+    make -f MAKEFILE
 
 to use that file instead. If you do not want `make` to do anything but just want to
 see what `make` might do, use the `-n` option, which does not execute any commands
 but just displays which ones it would do:
 
-    `make -n`
+    make -n
 
 There are many other things to know about running `make`, but these two flags
 are useful to remember as you progress through the lessons.
