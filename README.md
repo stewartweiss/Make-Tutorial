@@ -1,14 +1,22 @@
 # ABOUT THESE DEMOS
 
-This is a set of directories designed to teach you how to use makefiles.
-The way to use it is to start with the makefile in directory `demo1`, and
-proceed in order through the directories. If you skip one, you will most
+This is a self-contained tutorial on using the `make` utility in Unix.
+It is a set of directories designed to teach you how to write and use makefiles.
+The directories are named `demo1`, `demo2`, ..., `demo10`.
+Each directory has a makefile in it. 
+You should start with the makefile in directory `demo1`, and
+proceed in numerically increasing order through the directories. If you skip one, you will most
 likely not understand the rest, because each builds on the lessons from
 the preceding directories.
 
+**Note: You should download this repository as a zipfile and extract it into a
+directory on your Unix/Linux system. The remaining instructions assume you have 
+done this. To download as a zipfile, click the "`Clone or download`" button, and then
+click the "`Download ZIP`" link and follow the remaining instructions.**
+
 There are many things not covered by the lessons embedded in these
 makefiles. They are designed to give you the basics, and perhaps a bit more.
-Once you master these, you can handle reading the Make Manual.
+Once you master these, you can handle reading the *Make Manual*.
 
 These makefiles are based on the GNU make command. GNU's version of make 
 is not the same as other versions of make found in UNIX systems, but it
