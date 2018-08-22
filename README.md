@@ -9,10 +9,15 @@ proceed in numerically increasing order through the directories. If you skip one
 likely not understand the rest, because each builds on the lessons from
 the preceding directories.
 
-**Note: You should download this repository as a zipfile and extract it into a
-directory on your Unix/Linux system. The remaining instructions assume you have 
-done this. To download as a zipfile, click the "`Clone or download`" button, and then
-click the "`Download ZIP`" link and follow the remaining instructions.**
+**Note: To use this tutorial, you should first go to the repository on GitHub 
+that contains it, either by clicking on the "View on GitHub" button, or by manually loading the page https://github.com/stewartweiss/Make-Tutorial. 
+Once you have that page open in your browser, you should download the 
+repository as a zipfile and extract it into a
+directory on your Unix/Linux system. The rest of the instructions below 
+assume you have done this. 
+To download the repository as a zipfile, click the "`Clone or download`" 
+button, and then click the "`Download ZIP`" link and 
+follow the remaining instructions.**
 
 There are many things not covered by the lessons embedded in these
 makefiles. They are designed to give you the basics, and perhaps a bit more.
