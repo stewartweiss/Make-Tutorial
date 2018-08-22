@@ -10,7 +10,8 @@ likely not understand the rest, because each builds on the lessons from
 the preceding directories.
 
 **Note: To use this tutorial, you should first go to the repository on GitHub 
-that contains it, either by clicking on the "View on GitHub" button, or by manually loading the page https://github.com/stewartweiss/Make-Tutorial. 
+that contains it, either by clicking on the "View on GitHub" button, or by manually loading the page 
+[https://github.com/stewartweiss/Make-Tutorial](https://github.com/stewartweiss/Make-Tutorial). 
 Once you have that page open in your browser, you should download the 
 repository as a zipfile and extract it into a
 directory on your Unix/Linux system. The rest of the instructions below 
