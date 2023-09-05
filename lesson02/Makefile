@@ -13,13 +13,13 @@
 # the word "all". The target "all" has no recipe, but it has dependencies. 
 # make does not try to create a target named all. Instead it tries to update
 # each of the dependencies and do nothing more. In this case, "all"
-# depends on the file named demo, and so typing "make" by itself will cause 
-# demo to be built or updated if any of its dependencies have changed.
+# depends on the file named lesson, and so typing "make" by itself will cause 
+# lesson to be built or updated if any of its dependencies have changed.
 
 # 
 # You can also use the make command with arguments. Typing
-#     make demo
-# causes make to look for a target named demo and build it if it finds it.
+#     make lesson
+# causes make to look for a target named lesson and build it if it finds it.
 # 
 # Typing 
 #     make main.o
@@ -33,8 +33,8 @@
 #     touch <prereq>
 # where <prereq> is one of the target's prerequisites. For example,
 #     touch defs.h
-# will cause make to rebuild utils.o, interface.o, and demo, since the first 
-# two directly depend on defs.h, and demo depends on them.
+# will cause make to rebuild utils.o, interface.o, and lesson, since the first 
+# two directly depend on defs.h, and lesson depends on them.
 # 
 # You will probably see makefiles in which the first line looks something like
 # this:
@@ -46,18 +46,18 @@
 # "all" is not predefined; it is just a common sense word to use for it.
 #
 # To illustrate this idea, this directory has the sources for two different 
-# programs, named demo and driver. They differ only in their main programs. In
+# programs, named lesson and driver. They differ only in their main programs. In
 # other words, each depends on the same files except for main.c and driver.c.
-# The first line says that target "all" depends on both demo and driver.
-# The target "all" has no RECIPE because its only purpose is to force demo and
+# The first line says that target "all" depends on both lesson and driver.
+# The target "all" has no RECIPE because its only purpose is to force lesson and
 # driver to be updated.
 # The remaining lines are rules for building each of these.
 
 
-all: demo driver
+all: lesson driver
 
-demo: main.o utils.o interface.o
-	gcc -o demo main.o utils.o interface.o
+lesson: main.o utils.o interface.o
+	gcc -o lesson main.o utils.o interface.o
 
 driver: driver.o utils.o interface.o
 	gcc -o driver driver.o utils.o interface.o

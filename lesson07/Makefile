@@ -72,14 +72,14 @@ CC         :=    /usr/bin/gcc
 # "-Wall -g" to it. The operator += appends text to a variable. There are other 
 # ways to append text, but they will not work correctly if you use them with
 # implicit variables such as CFLAGS. See the GNU Make Manual for an 
-# explanation, or my explanation in the makefile in the demo10 directory.
+# explanation, or my explanation in the makefile in the lesson10 directory.
 CFLAGS     += -Wall -g
 
 
 
 
-demo: $(OBJECTS)
-	$(CC) $(CFLAGS) -o demo $(OBJECTS)
+lesson: $(OBJECTS)
+	$(CC) $(CFLAGS) -o lesson $(OBJECTS)
 
 main.o:  utils.h interface.h
 utils.o: utils.h defs.h
@@ -90,9 +90,9 @@ interface.o: interface.h defs.h
 clean:
 	$(RM) $(OBJECTS)
 
-install: demo
+install: lesson
 	@ if [ ! -d $(INSTALLDIR) ] ; then mkdir $(INSTALLDIR) ; fi
-	\cp demo $(INSTALLDIR)
+	\cp lesson $(INSTALLDIR)
 	@ touch install
 
 

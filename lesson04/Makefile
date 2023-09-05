@@ -17,8 +17,8 @@
 # target that depends upon it. The makefile becomes even simpler, as this one
 # demonstrates.
 
-demo: main.o utils.o interface.o
-	gcc -o demo main.o utils.o interface.o
+lesson: main.o utils.o interface.o
+	gcc -o lesson main.o utils.o interface.o
 
 main.o: utils.h interface.h  
 utils.o: utils.h defs.h

@@ -30,10 +30,10 @@ OBJECTS    := main.o utils.o interface.o
 
 # This rule says to name the executable whatever the name of the target is,
 # and to compile using all of the prerequisites. The second part of the recipe
-# prints a list of the object files that forced demo to be rebuilt. The "@"
+# prints a list of the object files that forced lesson to be rebuilt. The "@"
 # preceding the echo command tells make to execute the command without
 # echoing it, which is what make does by default.
-demo: $(OBJECTS)
+lesson: $(OBJECTS)
 	$(CC) $(CFLAGS) -o $@ $^
 	@ echo Changed files: $?
 
@@ -45,7 +45,7 @@ interface.o: interface.h defs.h
 clean:
 	$(RM) $(OBJECTS) 
 
-# The following rule exists only to demonstrate how the three automatic
+# The following rule exists only to lessonnstrate how the three automatic
 # variables, $@, $^, and $?, work.  The target, dummy, is not a PHONY target,
 # since we want to keep track of whether its prerequisites are newer than the
 # target and will use a trick to do this. We create a dummy file, named dummy,
@@ -58,9 +58,9 @@ dummy: $(OBJECTS)
 	@ touch dummy
 
 
-install: demo
+install: lesson
 	@ if [ ! -d $(INSTALLDIR) ] ; then mkdir $(INSTALLDIR) ; fi
-	\cp demo $(INSTALLDIR)
+	\cp lesson $(INSTALLDIR)
 	@ touch install
 
 # This rule also uses the $? variable. It prints only those source files

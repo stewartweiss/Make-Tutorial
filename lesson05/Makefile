@@ -37,15 +37,15 @@
 # is a phony target. so even if there is a file named clean in the directory,
 # make will ignore it and run the rule for the phony target "clean".
 
-# If you recall, in demo02, we had a target named all whose purpose was to
+# If you recall, in lesson02, we had a target named all whose purpose was to
 # force make to update its list of prerequisites. That target was also phony
 # so we could have declared it as a PHONY target as well.
 
 .PHONY: all
-all: demo
+all: lesson
 
-demo: main.o utils.o interface.o
-	gcc -o demo main.o utils.o interface.o
+lesson: main.o utils.o interface.o
+	gcc -o lesson main.o utils.o interface.o
 
 main.o: main.c  utils.h interface.h
 utils.o: utils.c utils.h defs.h
@@ -64,39 +64,39 @@ clean:
 # The following is not a phony target, but an empty target file that has the 
 # same effect. To be able to type 
 #     make install
-# and have the demo executable copied into the directory ../bin, we could use
+# and have the lesson executable copied into the directory ../bin, we could use
 # a phony target named install, but instead I use a file named install that 
-# depends on demo. If demo does not exist, it is made by this command.
+# depends on lesson. If lesson does not exist, it is made by this command.
 # The recipe also has a command to touch the file install. This changes its
 # time of last modification to the time the last install was performed. This
 # serves as a record for when the file was copied into our bin directory.
-# If demo has not been updated since the last install, this will not copy
+# If lesson has not been updated since the last install, this will not copy
 # anything into ../bin.
 
 # It is common to supply a "make install" command when providing software  
 # packages for distribution. This is one way to do it.
 
 
-install: demo
-	\cp demo ../bin
+install: lesson
+	\cp lesson ../bin
 	touch install
 
 # If the bin directory did not exist, this would create a file named bin in the
 # parent directory. This is not what we want. The following is error-proof.
 
-install2: demo
+install2: lesson
 	if [ ! -d ../bin ] ; then mkdir ../bin ; fi
-	\cp demo ../bin
+	\cp lesson ../bin
 	touch install2
 
 # This is another example of a phony target used to create a compressed tar
 # file of this source code distribution. It will create a tar file containing
-# the .c and .h files and the makefile, and name it demo.tar. It does this by
-# creating a temporary directory named demodir, linking all files into it,
+# the .c and .h files and the makefile, and name it lesson.tar. It does this by
+# creating a temporary directory named lessondir, linking all files into it,
 # and tarring this directory.
 tar: *.c *.h
-	if [ ! -d demodir ] ; then mkdir demodir ; fi
-	ln -f Makefile *.c *.h demodir/
-	tar -czf demo.tar.gz demodir
-	rm -rf demodir
+	if [ ! -d lessondir ] ; then mkdir lessondir ; fi
+	ln -f Makefile *.c *.h lessondir/
+	tar -czf lesson.tar.gz lessondir
+	rm -rf lessondir
 

@@ -27,18 +27,18 @@
 # Sometimes a RECIPE may be part of a rule that has no prerequisites.
 #
 # The remainder of this makefile consists of rules used to build a program 
-# named demo from the source code files in this directory. To create
-# the program named demo, one types on the command line
+# named lesson from the source code files in this directory. To create
+# the program named lesson, one types on the command line
 #
 #     make
 #
 # which causes the make program to read this makefile and follow the instructions
 # in it. 
 #
-# The first rule below states that demo depends on three object files,
+# The first rule below states that lesson depends on three object files,
 #     main.o, utils.o, and interface.o.
 # If any of them "change", then the recipe 
-#     "gcc -o demo main.o utils.o interface.o"
+#     "gcc -o lesson main.o utils.o interface.o"
 # will be executed.  The word "change" is in quotes because make does not
 # check whether a file has actually changed; it checks whether the file's time 
 # of last modification is later than the time of last modification of the target
@@ -52,14 +52,14 @@
 # changed or if main() itself changes, then main.o must be regenerated. Note 
 # that the command to regenerate it depends only on main.c, not the header files!
 #
-# make works recursively: if demo needs to be updated because it is older than 
-# one of its prerequisites, then make will also run the rules for each of demo's 
+# make works recursively: if lesson needs to be updated because it is older than 
+# one of its prerequisites, then make will also run the rules for each of lesson's 
 # prerequisites to determine whether any of them need to be rebuilt. 
 # It looks at the rules of their prerequisites in the same way, and so on.
 
 
-demo: main.o utils.o interface.o
-	gcc -o demo main.o utils.o interface.o
+lesson: main.o utils.o interface.o
+	gcc -o lesson main.o utils.o interface.o
 
 main.o: main.c utils.h interface.h
 	gcc -c main.c

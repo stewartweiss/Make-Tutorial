@@ -25,14 +25,14 @@
 # the next target.
 # 
 # This file begins by defining a recursively expanded variable named SUBDIRS 
-# to contain all of the demo subdirectories in the current directory. 
+# to contain all of the lesson subdirectories in the current directory. 
 # In the recipe for the "all" target, this SUBDIRS variable is expanded to the
-# list of directories whose name starts with "demo".
+# list of directories whose name starts with "lesson".
 # 
 # The recipe for the "all" target is a shell command. In fact, all recipes 
 # are passed by make to the shell to be executed, after stripping off the 
 # leading tab character from each line. 
-# In the makefiles in the demo directories, the shell command was always written
+# In the makefiles in the lesson directories, the shell command was always written
 # on a single line, as in
 #
 #    if [ ! -d $(INSTALLDIR) ] ; then mkdir $(INSTALLDIR) ; fi
@@ -71,7 +71,7 @@
 #
 # Now you are ready to understand the rules that follow.
 
-SUBDIRS = $(wildcard demo*) 
+SUBDIRS = $(wildcard lesson*) 
 
 .PHONY: all
 all:

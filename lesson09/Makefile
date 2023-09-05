@@ -34,8 +34,8 @@
 # because there may not be any object files in the directory when this is 
 # expanded, and so OBJS would contain nothing. You would get an error if you
 # wrote 
-#     demo: $(OBJS)
-#	         gcc -o demo $(OBJS)
+#     lesson: $(OBJS)
+#	         gcc -o lesson $(OBJS)
 #
 # The solution is to use the pattern substitution operator, $(patsubst ...).
 # This operator has the form 
@@ -65,7 +65,7 @@ CFLAGS     += -W -g
 INSTALLDIR := ../bin
 SRCS       := $(wildcard *.c )
 OBJS       := $(patsubst %.c, %.o, $(SRCS))
-EXEC       := demo
+EXEC       := lesson
 
 $(EXEC): $(OBJS)
 	$(CC) $(CFLAGS)  -o $@  $(OBJS)
@@ -87,8 +87,8 @@ cleanall: clean
 clean:
 	$(RM) $(OBJS)
 
-install: demo
+install: lesson
 	@ if [ ! -d $(INSTALLDIR) ] ; then mkdir $(INSTALLDIR) ; fi
-	\cp demo $(INSTALLDIR)
+	\cp lesson $(INSTALLDIR)
 	@ touch install
 	

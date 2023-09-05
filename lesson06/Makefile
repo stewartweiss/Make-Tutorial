@@ -41,13 +41,13 @@ OBJECTS    := main.o utils.o interface.o
 # is the string "/usr/bin/gcc", and OBJECTS is the string 
 # "main.o utils.o interface.o". 
 
-# The rule for the demo target is now simpler. In addition, if we decided to
+# The rule for the lesson target is now simpler. In addition, if we decided to
 # add another source file, we would only have to modify the definition of
 # OBJECTS. The rule for the phony target uses the variable INSTALLDIR. If we
 # want to change the install directory, we change just the variable value.
 
-demo: $(OBJECTS)
-	$(COMPILER) $(FLAGS) -o demo $(OBJECTS)
+lesson: $(OBJECTS)
+	$(COMPILER) $(FLAGS) -o lesson $(OBJECTS)
 
 main.o:  utils.h interface.h
 utils.o: utils.h defs.h
@@ -57,9 +57,9 @@ interface.o: interface.h defs.h
 clean:
 	\rm $(OBJECTS)
 
-install: demo
+install: lesson
 	@ if [ ! -d $(INSTALLDIR) ] ; then mkdir $(INSTALLDIR) ; fi
-	\cp demo $(INSTALLDIR)
+	\cp lesson $(INSTALLDIR)
 	@ touch install
 
 # What are those @ symbols doing on those lines? Are they typos? 
